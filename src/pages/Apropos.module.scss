@@ -1,0 +1,32 @@
+.bg {
+  height: 100%;
+  background: black;
+
+  .h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    font-size: 45rem;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    background: url(./../assets/images/pattern.jpg);
+    background-size: 800px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 30s linear infinite;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 800px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

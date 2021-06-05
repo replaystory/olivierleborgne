@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSprings, animated, to as interpolate } from 'react-spring'
 import { useDrag } from 'react-use-gesture'
 
-import css from './index.module.css'
+import css from './index.module.scss'
 
 const img = [
   './images/portfolio/appartmaison.png',
@@ -15,18 +15,20 @@ const img = [
 
 const to = (i) => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 100 })
 const from = (i) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
-const trans = (r, s) => `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
+const trans = (r, s) => `perspective(1500px) rotateX(40deg) rotateY(${r / 8}deg) rotateZ(${r}deg) scale(${s})`
 
-function shuffleArray(array) {
+const shuffle = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
-    ;[array[i], array[j]] = [array[j], array[i]]
+    const temp = array[i]
+    array[i] = array[j]
+    array[j] = temp
   }
   return array
 }
 
-export default function Cards () {
-  const cards = shuffleArray(img)
+export default function Cards() {
+  const [cards, setCards] = useState(shuffle(img))
   const [gone] = useState(() => new Set())
   const [props, set] = useSprings(cards.length, (i) => ({ ...to(i), from: from(i) }))
 
@@ -42,12 +44,19 @@ export default function Cards () {
       const scale = down ? 1.1 : 1
       return { x, rot, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 } }
     })
-    if (!down && gone.size === cards.length) setTimeout(() => gone.clear() || set((i) => to(i)), 600)
+    if (!down && gone.size === cards.length) {
+      setCards(shuffle(img))
+      setTimeout(() => gone.clear() || set((i) => to(i)), 500)
+    }
   })
   return props.map(({ x, y, rot, scale }, i) => (
     <animated.div className={css.div} key={i} style={{ x, y }}>
       {}
-      <animated.div  className={css.card} {...bind(i)} style={{ transform: interpolate([rot, scale], trans), backgroundImage: `url(${cards[i]})` }} />
+      <animated.div
+        className={css.card}
+        {...bind(i)}
+        style={{ transform: interpolate([rot, scale], trans), backgroundImage: `url(${cards[i]})` }}
+      />
     </animated.div>
   ))
 }
