@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;500;700&display=swap');
+
+* {
+  font-family: Signika, 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  pointer-events: none;
+}
+
+#root {
+  height: 100%;
+}
+
+a, button {
+  pointer-events: fill;
+  pointer: default;
+  font-weight: 700;
+}
+
+p {
+  font-weight: 300;
+}
+
+strong, b {
+  font-weight: 500;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
