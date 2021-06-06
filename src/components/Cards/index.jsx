@@ -13,19 +13,18 @@ const img = [
   './images/portfolio/theodor.png'
 ]
 
+const shuffle = (a) => {
+  let newArr = [].concat(a);
+  for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+  }
+  return newArr;
+};
+
 const to = (i) => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 100 })
 const from = (i) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
 const trans = (r, s) => `perspective(1500px) rotateX(40deg) rotateY(${r / 8}deg) rotateZ(${r}deg) scale(${s})`
-
-const shuffle = (array) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    const temp = array[i]
-    array[i] = array[j]
-    array[j] = temp
-  }
-  return array
-}
 
 export default function Cards() {
   const [cards, setCards] = useState(shuffle(img))

@@ -1,0 +1,26 @@
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  li {
+    background: white;
+    color: black;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    padding: 3px;
+    width: 50vw;
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      background: rgb(197, 197, 197);
+      border-radius: 15px;
+      padding: 10px;
+      span {
+        display: block;
+      }
+    }
+  }
+}

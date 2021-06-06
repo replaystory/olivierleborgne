@@ -7,7 +7,7 @@ import css from './CV.module.css'
 export default function CV() {
   return (
     <LayoutPage className={css.bg}>
-      <h1 className={css.h1}>CV</h1>
+      <h1 className={css.title}>CV</h1>
     </LayoutPage>
   )
 }

@@ -4,8 +4,8 @@
   font-family: Signika, 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  pointer-events: none;
   cursor: url('./assets/images/pointer.png') 5 0, auto;
+  user-select: none;
 }
 
 #root {
