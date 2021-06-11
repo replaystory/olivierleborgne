@@ -12,10 +12,10 @@ export default function Skills() {
   const url = (name, wrap = false) => `${wrap ? 'url(' : ''}/images/${name}.svg${wrap ? ')' : ''}`
 
   const skillsReact = [
-    { name: 'React', level: 75 },
-    { name: 'NEXT.js', level: 85 },
+    { name: 'React / NEXT.js', level: 65 },
+    { name: 'Redux', level: 60 },
     { name: 'Gatsby', level: 50 },
-    { name: 'Express', level: 70 },
+    { name: 'Node/Express', level: 60 },
     { name: 'VS Code', level: 90 }
   ]
 
@@ -28,13 +28,13 @@ export default function Skills() {
 
   const skillsUnity = [
     { name: 'CSharp', level: 70 },
-    { name: '2D', level: 90 },
-    { name: '3D', level: 50 },
-    { name: 'Shaders', level: 30 }
+    { name: '2D', level: 80 },
+    { name: '3D', level: 40 },
+    { name: 'Shaders', level: 20 }
   ]
 
   const skillsDB = [
-    { name: 'MongoDB', level: 60 },
+    { name: 'MongoDB', level: 50 },
     { name: 'MySQL', level: 90 },
     { name: 'Strapi', level: 50 },
     { name: 'Wordpress', level: 80 }
@@ -51,7 +51,7 @@ export default function Skills() {
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-          <img className={css.img} src={url('screen')} style={{ width: '20%' }}
+          <img className={css.img} src={url('screen')} style={{ width: '25%' }}
           onClick={() => parallax.current.scrollTo(1)} />
         </ParallaxLayer>
 

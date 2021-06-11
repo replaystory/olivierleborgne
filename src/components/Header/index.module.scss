@@ -65,3 +65,12 @@
   }
 
 }
+
+@media (max-width: 500px) {
+  .header {
+    left: 10px;
+  }
+  .logodiv {
+    display: none;
+  }
+}

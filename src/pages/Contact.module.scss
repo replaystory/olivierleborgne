@@ -9,4 +9,12 @@
   p {
     font-size: 1.2rem;
   }
+
+  .link {
+    pointer-events: fill;
+    cursor: url('../assets/images/pointer-hover.png') 5 0, auto;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

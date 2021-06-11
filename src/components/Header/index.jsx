@@ -8,7 +8,7 @@ import css from './index.module.scss'
 export default function Header() {
   return (
     <div className={css.header}>
-      <div>
+      <div className={css.logodiv}>
         <Logo div={css.div} logo={css.logo} shadow={css.shadow} />
       </div>
       <ul className={css.menu}>
