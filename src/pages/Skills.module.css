@@ -19,3 +19,9 @@
 .img:hover {
   transform: scale(1.6);
 }
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 3rem;
+  }
+}

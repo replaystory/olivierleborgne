@@ -47,7 +47,7 @@
       transition: width .5s ease, background-color .5s ease;
     }
 
-    a:hover:after {
+    a:hover:after, .active:after {
       width: 90%;
       background: white;
     }
@@ -68,7 +68,7 @@
 
 @media (max-width: 500px) {
   .header {
-    left: 10px;
+    left: 20px;
   }
   .logodiv {
     display: none;

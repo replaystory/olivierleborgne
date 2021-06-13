@@ -9,7 +9,12 @@
   transition: all 0.2s ease-in-out;
 }
 
+.btn {
+  top: -80px;
+}
+
 .btn:hover {
   cursor: url('../../assets/images/pointer-hover.png') 5 0, auto;
   transform: scale(1.2);
 }
+

@@ -13,9 +13,9 @@ export default function Skills() {
 
   const skillsReact = [
     { name: 'React / NEXT.js', level: 65 },
-    { name: 'Redux', level: 60 },
+    { name: 'Redux', level: 70 },
     { name: 'Gatsby', level: 50 },
-    { name: 'Node/Express', level: 60 },
+    { name: 'Node/Express', level: 50 },
     { name: 'VS Code', level: 90 }
   ]
 
@@ -40,9 +40,16 @@ export default function Skills() {
     { name: 'Wordpress', level: 80 }
   ]
 
+  const skillsOthers = [
+    { name: 'Mise en page', level: 70 },
+    { name: 'Montage vidéo', level: 80 },
+    { name: 'Gestion de projets', level: 50 },
+    { name: 'Direction artistique', level: 60 }
+  ]
+
   return (
     <LayoutPage className={css.bg}>
-      <Parallax ref={parallax} pages={5}>
+      <Parallax ref={parallax} pages={6}>
         <ParallaxLayer
           offset={0}
           speed={0.1}
@@ -51,8 +58,7 @@ export default function Skills() {
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-          <img className={css.img} src={url('screen')} style={{ width: '25%' }}
-          onClick={() => parallax.current.scrollTo(1)} />
+          <img className={css.img} src={url('screen')} style={{ width: '25%' }} onClick={() => parallax.current.scrollTo(1)} />
         </ParallaxLayer>
 
         {/* -------------------- PAGE 1 ---------------------- */}
@@ -169,7 +175,7 @@ export default function Skills() {
 
         <ParallaxLayer offset={4.2} speed={0.5} style={{ position: 'absolute', top: 0 }}>
           <SkillsBar skills={skillsUnity} />
-          <BtnSuite parallax={parallax} numPage={0} />
+          <BtnSuite parallax={parallax} numPage={5} />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -181,6 +187,26 @@ export default function Skills() {
             justifyContent: 'center'
           }}>
           <h2 className={css.title}>Unity 3D</h2>
+        </ParallaxLayer>
+
+        {/* -------------------- PAGE 5 ---------------------- */}
+
+        <ParallaxLayer offset={5} speed={1} style={{ backgroundColor: '#f59506' }} />
+
+        <ParallaxLayer offset={5.2} speed={0.5} style={{ position: 'absolute', top: 0 }}>
+          <SkillsBar skills={skillsOthers} />
+          <BtnSuite parallax={parallax} numPage={0} />
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={5.3}
+          speed={0.1}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+          <h2 className={css.title}>Autres</h2>
         </ParallaxLayer>
       </Parallax>
     </LayoutPage>
