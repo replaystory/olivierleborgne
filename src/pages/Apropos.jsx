@@ -18,8 +18,8 @@ export default function Apropos() {
 
   return (
     <LayoutPage className={css.bg}>
-        <FlipCard img={img} width={300} title="Portrait">
-          <img src={img2} alt="Portrait" width={300} />
+        <FlipCard img={img} maxheight={280} title="Portrait">
+          <img src={img2} alt="Portrait" style={{maxHeight: 280, width: 'auto'}} />
         </FlipCard>
         <FlipCard front={front}>
           <ul>
