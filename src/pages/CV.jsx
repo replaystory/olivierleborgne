@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 import LayoutPage from '../components/Layout'
-import BtnSuite from '../components/BtnSuite'
+import BtnScroll from '../components/BtnScroll'
 
 import css from './CV.module.scss'
 
@@ -11,6 +11,8 @@ export default function CV() {
   return (
     <LayoutPage className={css.bg}>
       <h1 className={css.title}>CV</h1>
+      <BtnScroll />
+
 
       <Parallax ref={parallax} pages={4}>
         <ParallaxLayer
@@ -22,6 +24,7 @@ export default function CV() {
             marginTop: 25,
             padding: 50
           }}>
+
             <h2>Expériences professionnelles</h2>
 
             <h3>Développeur / Consultant Digital</h3>
@@ -51,7 +54,8 @@ export default function CV() {
             marginTop: 25,
             padding: 50
           }}>
-                        <h3>Producteur / Monteur</h3>
+
+            <h3>Producteur / Monteur</h3>
             <div className={css.date}>de 2011 à 2013 / REPLAY Agency &amp; REPLAY Productions</div>
             <p>
               Production de plusieurs court-métrages, de clips musicaux et de films d'entreprise,
@@ -83,6 +87,7 @@ export default function CV() {
             marginTop: 25,
             padding: 50
           }}>
+
             <h3>Webmaster Senior</h3>
             <div className={css.date}>de 2002 à 2007 / Société Générale</div>
             <p>
